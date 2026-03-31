@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: flask-vedendra
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api.index:app
+    envVars:
+      - key: GMAIL_USER
+        sync: false
+      - key: GMAIL_PASS
+        sync: false
